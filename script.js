@@ -5,7 +5,7 @@
 
 /* ================= GOOGLE FORM ================= */
 
-const GOOGLE_FORM_URL = "PASTE_GOOGLE_FORM_LINK_HERE";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfXohLkMRRRUaKuBikCHzTtgDaRbMKkxnm_H2143Es2FxHfsg/viewform?usp=publish-editor";
 
 /* ================= MOBILE MENU ================= */
 
