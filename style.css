@@ -571,3 +571,41 @@ img {
         margin-bottom: 50px;
     }
 }
+.review-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.review-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.review-content {
+    padding: 24px;
+}
+
+.review-content h3 {
+    margin-bottom: 8px;
+}
+
+.review-university {
+    display: block;
+    color: #2563EB;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.review-content p {
+    line-height: 1.7;
+}
