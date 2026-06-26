@@ -1,13 +1,9 @@
-/* =====================================================
+/* ==========================================
    ZHANAGASYR
-   SWISS / EDITORIAL / BRUTALIST DESIGN
-===================================================== */
+   SWISS / EDITORIAL DESIGN
+========================================== */
 
-/* ================= RESET ================= */
-
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,78 +13,25 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --black: #111111;
+    --gray: #666666;
+    --light: #f5f5f5;
+    --border: #dddddd;
+    --white: #ffffff;
+
+    --transition: 0.4s ease;
+
+    --container: 1320px;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background: #FFFFFF;
-    color: #000000;
+    font-family: "Inter", sans-serif;
+    background: #ffffff;
+    color: var(--black);
     overflow-x: hidden;
     line-height: 1.6;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-}
-
-/* ================= VARIABLES ================= */
-
-:root {
-
-    --black: #000000;
-    --white: #FFFFFF;
-
-    --gray-100: #F7F7F7;
-    --gray-200: #EAEAEA;
-    --gray-400: #A0A0A0;
-    --gray-600: #6B6B6B;
-
-    --border: #000000;
-
-    --transition: 0.35s ease;
-
-    --max-width: 1440px;
-}
-
-/* ================= CONTAINER ================= */
-
-.container {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 48px;
-}
-
-/* ================= TYPOGRAPHY ================= */
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-}
-
-h1 {
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
-}
-
-h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-}
-
-h3 {
-    font-size: 1.4rem;
-}
-
-p {
-    font-size: 1rem;
-    color: var(--gray-600);
-    max-width: 700px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 img {
@@ -96,112 +39,105 @@ img {
     display: block;
 }
 
-/* ================= SELECTION ================= */
-
-::selection {
-    background: #000;
-    color: #fff;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* ================= BUTTONS ================= */
+button {
+    font-family: inherit;
+}
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 40px;
+}
 
-    padding: 18px 34px;
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
 
-    border: 1px solid #000;
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
 
-    background: transparent;
+h1 {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+}
 
-    color: #000;
+h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
 
-    font-size: 0.85rem;
+h3 {
+    font-size: 1.5rem;
+}
 
-    font-weight: 700;
+p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.section-tag {
+    display: inline-block;
+
+    font-size: 0.75rem;
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
-    cursor: pointer;
+    font-weight: 700;
 
-    transition:
-        transform .45s ease,
-        background .45s ease,
-        color .45s ease,
-        box-shadow .45s ease;
+    color: #888;
+
+    margin-bottom: 24px;
 }
 
-.btn:hover {
-    transform: scale(1.04);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.12);
-}
-
-.btn-primary {
-    background: #000;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: #fff;
-    color: #000;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: #000;
-}
-
-.btn-accent {
-    background: #fff;
-    color: #000;
-}
-
-.btn-accent:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* ================= HEADER ================= */
+/* ==========================================
+   HEADER
+========================================== */
 
 .header {
     position: sticky;
     top: 0;
-    z-index: 999;
 
-    background: rgba(255,255,255,0.96);
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.95);
 
     backdrop-filter: blur(20px);
 
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar {
-    min-height: 95px;
+    height: 90px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
 .logo {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 
     font-weight: 900;
-
-    letter-spacing: -1px;
 
     text-transform: uppercase;
 }
 
 .nav-menu {
     display: flex;
-    align-items: center;
+
     gap: 40px;
 
     list-style: none;
@@ -210,15 +146,13 @@ img {
 .nav-menu a {
     font-size: 0.85rem;
 
-    font-weight: 700;
-
     text-transform: uppercase;
+
+    font-weight: 700;
 
     letter-spacing: 1px;
 
     position: relative;
-
-    transition: var(--transition);
 }
 
 .nav-menu a::after {
@@ -227,7 +161,7 @@ img {
     position: absolute;
 
     left: 0;
-    bottom: -6px;
+    bottom: -8px;
 
     width: 0;
 
@@ -242,7 +176,71 @@ img {
     width: 100%;
 }
 
-/* ================= MOBILE BUTTON ================= */
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 16px 32px;
+
+    border: 1px solid #000;
+
+    background: transparent;
+
+    color: #000;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.btn:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: #111;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #111;
+}
+
+.btn-secondary {
+    background: transparent;
+}
+
+.btn-accent {
+    background: #fff;
+    color: #111;
+}
+
+/* ==========================================
+   MOBILE BUTTON
+========================================== */
 
 .mobile-menu-btn {
     display: none;
@@ -254,127 +252,26 @@ img {
     font-size: 2rem;
 
     cursor: pointer;
-
-    color: #000;
 }
-
-/* ================= MOBILE MENU ================= */
 
 .mobile-menu {
     display: none;
 }
 
-/* ================= SECTION LABELS ================= */
-
-.section-tag {
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    font-size: 0.75rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    color: var(--gray-600);
-}
-
-/* ================= SECTION HEADER ================= */
-
-.section-header {
-    margin-bottom: 50px;
-
-    max-width: 850px;
-}
-
-.section-header h2 {
-    margin-bottom: 24px;
-}
-
-.section-header p {
-    font-size: 1.25rem;
-
-    max-width: 700px;
-
-    line-height: 1.8;
-}
-
-/* ================= DIVIDERS ================= */
-
-.section {
-    padding: 120px 0;
-
-    border-top: 1px solid #000;
-}
-
-.section:first-of-type {
-    border-top: none;
-}
-
-/* ================= UTILITY ================= */
-
-.text-black {
-    color: #000;
-}
-
-.text-gray {
-    color: var(--gray-600);
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.border-top {
-    border-top: 1px solid #000;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #000;
-}
-
-/* ================= IMAGE STYLE ================= */
-
-.case-card img,
-.review-card img {
-    filter: grayscale(100%) contrast(110%);
-}
-
-/* ================= SCROLLBAR ================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #000;
-}
-/* =====================================================
-   HERO / SWISS LAYOUT
-===================================================== */
+/* ==========================================
+   HERO
+========================================== */
 
 .hero {
-    min-height: calc(100vh - 95px);
+    padding: 100px 0 120px;
 
-    display: flex;
-    align-items: center;
-
-    padding: 100px 0 80px;
-
-    border-bottom: 1px solid #000;
+    min-height: calc(100vh - 90px);
 }
 
 .hero-grid {
     display: grid;
 
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 380px;
 
     gap: 80px;
 
@@ -382,89 +279,55 @@ img {
 }
 
 .hero-content {
-    position: relative;
-}
-
-.hero-badge {
-    display: inline-block;
-
-    margin-bottom: 40px;
-
-    font-size: 0.75rem;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    color: #666;
-
-    border-bottom: 1px solid #000;
-
-    padding-bottom: 10px;
+    max-width: 700px;
 }
 
 .hero h1 {
-    max-width: 620px;
-
-    font-size: clamp(3rem,6vw,5.5rem);
-
-    line-height: 0.92;
-
-    letter-spacing: -3px;
+    margin-bottom: 35px;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 
     max-width: 620px;
 
-    margin-bottom: 50px;
-
-    color: #555;
-
-    line-height: 1.8;
+    margin-bottom: 45px;
 }
 
 .hero-buttons {
     display: flex;
 
-    gap: 18px;
+    gap: 20px;
 
     flex-wrap: wrap;
 }
 
-/* =====================================================
+/* ==========================================
    ROADMAP
-===================================================== */
+========================================== */
 
 .hero-roadmap {
     position: relative;
 }
 
 .roadmap-card {
-    border: 1px solid #000;
-
-    padding: 60px 55px;
-
-    min-width: 340px;
-
-    width: 100%;
-
-    background: #fff;
-
     position: sticky;
 
-    top: 130px;
+    top: 120px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    padding: 45px;
 }
 
 .roadmap-step {
-    font-size: 1rem;
-
-    font-weight: 800;
+    font-size: 0.95rem;
 
     text-transform: uppercase;
+
+    font-weight: 800;
 
     letter-spacing: 1px;
 
@@ -472,63 +335,111 @@ img {
 }
 
 .arrow {
-    font-size: 1.4rem;
-
     color: #999;
 
-    padding: 6px 0;
+    padding: 5px 0;
 }
 
 .roadmap-step.active {
-    color: #fff;
+    background: #111;
 
-    background: #000;
+    color: #fff;
 
     padding: 14px 18px;
 
     margin-top: 10px;
 }
-
-/* =====================================================
-   LARGE NUMBERS
-===================================================== */
+/* ==========================================
+   SECTIONS
+========================================== */
 
 .section {
-    position: relative;
+    padding: 110px 0;
+
+    border-top: 1px solid var(--border);
 }
 
-.section-number {
-    position: absolute;
+.section-header {
+    max-width: 850px;
 
-    left: -50px;
-    top: 120px;
-
-    font-size: 0.8rem;
-
-    letter-spacing: 3px;
-
-    color: #888;
-
-    font-weight: 800;
+    margin-bottom: 60px;
 }
 
-/* =====================================================
-   CARDS GRID
-===================================================== */
+.section-header h2 {
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    font-size: 1.15rem;
+
+    max-width: 650px;
+}
+
+/* ==========================================
+   GRIDS
+========================================== */
+
 .cards-grid {
     display: grid;
+
     gap: 30px;
 }
 
 .cards-4 {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .cards-3 {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card {
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    padding: 40px;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
+
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.08);
+
+    border-color: #111;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+
+    line-height: 1.1;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+.card-icon {
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+}
+
+/* ==========================================
+   REVIEWS
+========================================== */
 
 .reviews-grid {
     display: grid;
@@ -538,264 +449,192 @@ img {
     gap: 30px;
 }
 
-/* =====================================================
-   CARDS
-===================================================== */
-
-.card {
-    padding: 45px;
-
-    border: 1px solid #000;
-
+.review-card {
     background: #fff;
 
-    transition: 0.55s cubic-bezier(
-    0.22,
-    1,
-    0.36,
-    1
-);
-    position: relative;
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
 }
 
-.card:hover,
-.review-card:hover,
-.case-card:hover {
-    transform: translateY(-8px) scale(1.02);
+.review-card:hover {
+    transform: translateY(-8px);
 
     box-shadow:
-        0 30px 60px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-    margin-bottom: 25px;
-
-    font-size: 1.5rem;
-
-    line-height: 1.1;
-}
-
-.card p {
-    line-height: 1.8;
-}
-
-/* =====================================================
-   ICONS
-===================================================== */
-
-.card-icon {
-    font-size: 2rem;
-
-    margin-bottom: 30px;
-
-    filter: grayscale(100%);
-}
-
-/* =====================================================
-   REVIEW CARDS
-===================================================== */
-
-.review-card {
-    border: 1px solid #000;
-
-    background: #fff;
-
-    transition: 0.35s ease;
+        0 30px 60px rgba(0,0,0,0.1);
 }
 
 .review-card img {
-    height: 420px;
+    width: 100%;
+
+    height: 360px;
 
     object-fit: cover;
 
-    filter:
-        grayscale(100%)
-        contrast(115%);
-}
+    }
 
 .review-content {
     padding: 30px;
 }
 
 .review-content h3 {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .review-university {
     display: block;
 
-    margin-bottom: 20px;
-
     font-size: 0.75rem;
-
-    letter-spacing: 1.5px;
 
     text-transform: uppercase;
 
-    color: #666;
+    letter-spacing: 1px;
+
+    color: #888;
+
+    margin-bottom: 20px;
 }
 
 .review-content p {
+    color: var(--gray);
+
     line-height: 1.8;
 }
 
-/* =====================================================
-   CASES (если остались)
-===================================================== */
+/* ==========================================
+   REVIEW PYRAMID
+========================================== */
 
-.case-card {
-    border: 1px solid #000;
-
-    background: #fff;
-
-    transition: 0.35s ease;
+.review-card.tomiris {
+    margin-left: 80px;
 }
 
-
-.case-card img {
-    height: 360px;
-
-    object-fit: cover;
-
-    filter:
-        grayscale(100%)
-        contrast(115%);
+.review-card.abylai {
+    margin-right: 80px;
 }
 
-.case-content {
-    padding: 30px;
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+.hidden {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
 }
 
-/* =====================================================
-   ASYMMETRIC BLOCKS
-===================================================== */
+.show {
+    opacity: 1;
 
-.section-header {
-    display: block;
-
-    max-width: 850px;
-
-    margin-bottom: 80px;
+    transform: translateY(0);
 }
 
-.section-tag {
-    margin-top: 20px;
+/* ==========================================
+   SCROLL ANIMATION
+========================================== */
+
+.card,
+.review-card {
+    will-change: transform;
 }
 
-/* =====================================================
-   QUOTE STYLE
-===================================================== */
+/* ==========================================
+   LIGHT SECTION
+========================================== */
 
-blockquote {
-    font-size: 2rem;
-
-    font-weight: 800;
-
-    line-height: 1.2;
-
-    letter-spacing: -1px;
-
-    max-width: 800px;
+.section-light {
+    background: #fafafa;
 }
 
-/* =====================================================
-   EDITORIAL LINES
-===================================================== */
+/* ==========================================
+   DIVIDERS
+========================================== */
 
-.card::before,
-.review-card::before,
-.case-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 50px;
-
-    height: 1px;
-
-    background: #000;
+.section + .section {
+    border-top: 1px solid var(--border);
 }
 
-/* =====================================================
-   CTA PREPARATION
-===================================================== */
+/* ==========================================
+   SPACING FIX
+========================================== */
 
-.cta {
-    position: relative;
-
-    overflow: hidden;
+#reviews .section-header,
+#advantages .section-header,
+#audience .section-header {
+    margin-bottom: 50px;
 }
-/* =====================================================
+
+/* ==========================================
+   IMAGE EFFECT
+========================================== */
+
+.review-card img:hover {
+    transform: scale(1.03);
+
+    transition: transform .7s ease;
+}
+/* ==========================================
    CTA
-===================================================== */
+========================================== */
 
 .cta {
-    background: #000;
+    background: #111;
 
     color: #fff;
 
     padding: 140px 0;
-
-    border-top: 1px solid #000;
 }
 
 .cta-content {
-    max-width: 1000px;
+    max-width: 900px;
 }
 
 .cta h2 {
     color: #fff;
 
-    font-size: clamp(3rem, 7vw, 6rem);
-
-    line-height: 0.95;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .cta p {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.7);
 
     font-size: 1.15rem;
 
+    margin-bottom: 45px;
+
     max-width: 700px;
-
-    margin-bottom: 50px;
-
-    line-height: 1.8;
 }
 
 .cta .btn {
     background: #fff;
 
-    color: #000;
+    color: #111;
 
-    border: 1px solid #fff;
+    border-color: #fff;
 }
 
 .cta .btn:hover {
-    background: #000;
+    background: transparent;
 
     color: #fff;
 }
 
-/* =====================================================
+/* ==========================================
    FOOTER
-===================================================== */
+========================================== */
 
 .footer {
-    background: #fff;
+    padding: 90px 0 40px;
 
-    color: #000;
-
-    padding: 100px 0 40px;
-
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--border);
 }
 
 .footer-grid {
@@ -803,7 +642,7 @@ blockquote {
 
     grid-template-columns: 1.5fr 1fr 1fr;
 
-    gap: 80px;
+    gap: 60px;
 }
 
 .footer-logo {
@@ -813,15 +652,11 @@ blockquote {
 
     text-transform: uppercase;
 
-    letter-spacing: -1px;
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .footer-text {
-    color: #666;
-
-    line-height: 1.8;
+    color: var(--gray);
 
     max-width: 350px;
 }
@@ -833,7 +668,7 @@ blockquote {
 
     letter-spacing: 2px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .footer-links {
@@ -841,12 +676,10 @@ blockquote {
 }
 
 .footer-links li {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .footer-links a {
-    color: #000;
-
     transition: 0.3s;
 }
 
@@ -855,44 +688,42 @@ blockquote {
 }
 
 .footer-bottom {
-    margin-top: 80px;
+    margin-top: 70px;
 
     padding-top: 30px;
 
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--border);
+
+    color: #888;
 
     font-size: 0.85rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    color: #777;
 }
 
-/* =====================================================
+/* ==========================================
    MOBILE MENU
-===================================================== */
+========================================== */
 
 .mobile-menu {
     position: fixed;
 
-    top: 95px;
+    top: 90px;
     left: 0;
 
     width: 100%;
 
-    background: #fff;
+    background: white;
 
-    border-bottom: 1px solid #000;
+    padding: 35px;
 
-    padding: 40px;
+    border-bottom: 1px solid var(--border);
+
+    display: none;
 
     flex-direction: column;
 
     gap: 25px;
 
-    z-index: 998;
+    z-index: 999;
 }
 
 .mobile-menu.active {
@@ -902,86 +733,28 @@ blockquote {
 .mobile-menu a {
     font-size: 1rem;
 
+    font-weight: 700;
+
     text-transform: uppercase;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
 }
 
-/* =====================================================
-   ANIMATIONS
-===================================================== */
-
-.hidden {
-    opacity: 0;
-    transform: translateY(35px);
-
-    transition:
-        opacity 1.2s ease,
-        transform 1.2s ease;
-}
-
-.show {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-.hero-content {
-    animation: heroFade 1s ease;
-}
-
-.hero-roadmap {
-    animation: heroFade 1.2s ease;
-}
-
-@keyframes heroFade {
-
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =====================================================
-   SCROLLBAR
-===================================================== */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #000;
-}
-
-/* =====================================================
+/* ==========================================
    TABLET
-===================================================== */
+========================================== */
 
 @media (max-width: 1100px) {
 
     .hero-grid {
         grid-template-columns: 1fr;
 
-        gap: 70px;
+        gap: 60px;
     }
 
     .roadmap-card {
         position: static;
     }
 
-    .cards-3 {
+    .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -989,35 +762,44 @@ blockquote {
         grid-template-columns: 1fr;
     }
 
-    .section-header {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
+    .review-card.tomiris,
+    .review-card.abylai {
+        margin: 0;
     }
 }
 
-/* =====================================================
+/* ==========================================
    MOBILE
-===================================================== */
+========================================== */
 
 @media (max-width: 768px) {
 
     .container {
-        padding: 0 24px;
+        padding: 0 22px;
     }
 
     .section {
-        padding: 90px 0;
+        padding: 80px 0;
     }
 
     .hero {
-        padding: 70px 0;
+        padding: 60px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero h1 {
-        font-size: clamp(3rem, 18vw, 5rem);
+        font-size: 3rem;
 
-        letter-spacing: -3px;
+        line-height: 0.95;
+
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        font-size: 2.2rem;
     }
 
     .hero-description {
@@ -1032,10 +814,7 @@ blockquote {
         width: 100%;
     }
 
-    .nav-menu {
-        display: none;
-    }
-
+    .nav-menu,
     .nav-cta {
         display: none;
     }
@@ -1045,70 +824,82 @@ blockquote {
     }
 
     .cards-4,
-    .cards-3 {
+    .cards-3,
+    .reviews-grid {
         grid-template-columns: 1fr;
     }
 
-    .card {
-        padding: 35px;
+    .card,
+    .review-content {
+        padding: 30px;
     }
 
-    .review-card img,
-    .case-card img {
+    .review-card img {
         height: 320px;
     }
 
     .roadmap-card {
-        padding: 35px;
+        width: 100%;
+
+        min-width: auto;
+
+        padding: 30px;
+    }
+
+    .review-card.tomiris,
+    .review-card.abylai {
+        margin: 0;
     }
 
     .cta {
         padding: 100px 0;
     }
 
-    .cta h2 {
-        font-size: 3rem;
-    }
-
     .footer {
         padding: 70px 0 30px;
     }
-
-    .footer-grid {
-        gap: 50px;
-    }
 }
 
-/* =====================================================
+/* ==========================================
    SMALL MOBILE
-===================================================== */
+========================================== */
 
 @media (max-width: 480px) {
 
     .container {
-        padding: 0 20px;
+        padding: 0 18px;
     }
 
-    h1 {
-        letter-spacing: -2px;
+    .hero h1 {
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .card,
-    .review-content,
-    .case-content {
-        padding: 28px;
-    }
-
-    .hero-badge,
-    .section-tag {
-        font-size: 0.7rem;
+    .review-content {
+        padding: 24px;
     }
 
     .footer-logo {
         font-size: 1.5rem;
     }
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #111;
 }
